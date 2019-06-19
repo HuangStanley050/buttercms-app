@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetch_start } from "../store/actions/fetchActions";
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {fetch_start} from "../store/actions/fetchActions";
+import Loader from "./loader";
+import Clock from "./clock";
 
 class BackGround extends Component {
   componentDidMount() {
@@ -20,18 +22,21 @@ class BackGround extends Component {
       justifyContent: "center",
       alignItems: "center"
     };
-    console.log(this.props.pictureUrl);
-    return (
+    let content = this.props.loading ? (
+      <Loader />
+    ) : (
       <div style={backgroundStyle}>
-        <h1>Hello World</h1>
+        <Clock />
       </div>
     );
+    return content;
   }
 }
 
 const mapStateToProps = state => {
   return {
-    pictureUrl: state.background.image
+    pictureUrl: state.background.image,
+    loading: state.background.loading
   };
 };
 
