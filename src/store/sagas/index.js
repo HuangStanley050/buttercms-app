@@ -1,7 +1,7 @@
 import axios from "axios";
-import { takeEvery, put, call } from "redux-saga/effects";
+import {takeEvery, put} from "redux-saga/effects";
 import * as actionType from "../actions/actionTypes";
-import { fetch_fail, fetch_okay } from "../actions/fetchActions";
+import {fetch_fail, fetch_okay} from "../actions/fetchActions";
 //https://api.unsplash.com/
 // import fs from "fs";
 // require("dotenv").config({
@@ -20,6 +20,7 @@ function* fetchWorker(action) {
     yield put(fetch_okay(result.data.urls.regular));
   } catch (err) {
     console.log(err);
+    yield put(fetch_fail());
   }
 }
 

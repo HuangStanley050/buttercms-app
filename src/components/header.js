@@ -1,14 +1,11 @@
 import React from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import { Navbar } from "reactstrap";
 import Img from "../images/butter-w.png";
 const Header = props => {
   return (
     <div>
       <Navbar color="dark" light>
-        <NavbarBrand
-          style={{ display: "block", width: "200px" }}
-          className="mx-auto"
-        >
+        <div style={{ display: "block", width: "200px" }} className="mx-auto">
           <a
             rel="noopener noreferrer"
             target="_blank"
@@ -16,7 +13,7 @@ const Header = props => {
           >
             <img alt="logo pic" style={{ width: "200px" }} src={Img} />
           </a>
-        </NavbarBrand>
+        </div>
       </Navbar>
     </div>
   );

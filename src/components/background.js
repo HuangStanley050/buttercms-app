@@ -4,14 +4,13 @@ import { fetch_start } from "../store/actions/fetchActions";
 
 class BackGround extends Component {
   componentDidMount() {
-    //this.interval = setInterval(() => this.props.getPicture(), 1115000);
     this.props.getPicture();
+    this.interval = setInterval(() => this.props.getPicture(), 3600000);
   }
   componentWillUnmount() {
-    //clearInterval(this.interval);
+    clearInterval(this.interval);
   }
   render() {
-    //console.log(this.props.pictureUrl);
     const backgroundStyle = {
       backgroundImage: `url(${this.props.pictureUrl})`,
       backgroundRpeat: "no repeat",
@@ -21,7 +20,7 @@ class BackGround extends Component {
       justifyContent: "center",
       alignItems: "center"
     };
-    console.log(backgroundStyle);
+    console.log(this.props.pictureUrl);
     return (
       <div style={backgroundStyle}>
         <h1>Hello World</h1>
