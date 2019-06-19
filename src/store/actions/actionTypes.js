@@ -1,0 +1,3 @@
+export const GET_IMAGE_START = "GET_IMAGE_START";
+export const GET_IMAGE_OKAY = "GET_IMAGE_OKAY";
+export const GET_IMAGE_FAIL = "GET_IMAGE_FAIL";
